@@ -1,4 +1,4 @@
-import UIKit
+ import UIKit
 
 
 
@@ -17,9 +17,10 @@ class RemoteControl {
     func doSomething() {
         print("리모콘의 조작이 일어나고 있음")
     }
-    
+    // 🍑 2. RemoteControl의 channelUp
     func channelUp() {   // 어떤 기기가 리모콘에 의해 작동되는지 몰라도 됨
         delegate?.channelUp()
+        // 🍑 3. delegate(대리자)에게 channelUp을 시킴
     }
     
     func channelDown() {   // 어떤 기기가 리모콘에 의해 작동되는지 몰라도 됨
@@ -29,8 +30,8 @@ class RemoteControl {
 
 
 // TV 클래스(뷰컨트롤러의 역할 - 리모콘과 커뮤니케이션)
-class TV: RemoteControlDelegate {
-    
+class TV: RemoteControlDelegate { // 🍑 델리게이트 프로토콜 채택 / 프로토콜 채택 했으니 필수 메서드 구현 필요
+    // 🍑 4. 대리자인 TV의 channelUp 실행
     func channelUp() {
         print("TV의 채널이 올라간다.")
     }
@@ -46,10 +47,10 @@ class TV: RemoteControlDelegate {
 let remote = RemoteControl()
 let samsungTV = TV()
 
-remote.delegate = samsungTV
+remote.delegate = samsungTV // 🍑 객체 내에 있으면 self 
 
 
-
+// 🍑 1. remote는 RemoteControl
 remote.channelUp()        // 리모콘 실행 ====> delegate?.channelUp()
 remote.channelDown()      // 리모콘 실행 ====> delegate?.channelDown()
 
