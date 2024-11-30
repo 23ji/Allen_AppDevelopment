@@ -10,6 +10,8 @@ import UIKit
 final class ViewController: UIViewController {
     
     // MARK: - 이메일 입력하는 텍스트 뷰
+    // 🍑 회색 뷰 > 안내문구 > 텍스트 입력 필드 순으로 쌓기
+    // 🍑 addSubView가 view가 만들어진 다음에 실행되어야해서 lazy var
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
