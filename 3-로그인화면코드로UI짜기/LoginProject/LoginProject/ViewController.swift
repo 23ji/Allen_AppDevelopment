@@ -43,6 +43,7 @@ final class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
+        // 🍑addTarget은 #selector를 이용해서 다른 함수를 연결하는 것
         tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         return tf
     }()
@@ -237,16 +238,18 @@ final class ViewController: UIViewController {
     @objc func resetButtonTapped() {
         //만들기
         let alert = UIAlertController(title: "비밀번호 바꾸기", message: "비밀번호를 바꾸시겠습니까?", preferredStyle: .alert)
+        // 🍑 action을 만든다음에
         let success = UIAlertAction(title: "확인", style: .default) { action in
             print("확인버튼이 눌렸습니다.")
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
             print("취소버튼이 눌렸습니다.")
         }
-        
+        // 🍑 액션을 올려줘야함
         alert.addAction(success)
         alert.addAction(cancel)
         
+        //🍑 다음 화면으로 넘어가는 메서드 present
         // 실제 띄우기
         self.present(alert, animated: true, completion: nil)
     }
@@ -309,6 +312,7 @@ extension ViewController: UITextFieldDelegate {
     }
     
     // MARK: - 이메일텍스트필드, 비밀번호 텍스트필드 두가지 다 채워져 있을때, 로그인 버튼 빨간색으로 변경
+    // 🍑 위에서 #selector로 만들어졌기 때문에 @objc로 함수 만들어야 함
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         if textField.text?.count == 1 {
             if textField.text?.first == " " {
