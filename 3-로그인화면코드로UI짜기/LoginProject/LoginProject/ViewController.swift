@@ -149,7 +149,7 @@ final class ViewController: UIViewController {
     // 셋팅
     private func configure() {
         view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.07450980392, blue: 0.07450980392, alpha: 1)
-        emailTextField.delegate = self
+        emailTextField.delegate = self // 🍑 델리게이트 채택할 때 self 잊지 말기!!!
         passwordTextField.delegate = self
         [stackView, passwordResetButton].forEach { view.addSubview($0) }
     }
@@ -261,6 +261,7 @@ final class ViewController: UIViewController {
 
 }
 
+// 🍑 뷰컨에 프로토콜 채택하고 구현해도 되지만 이렇게 extension으로 따로 하는게 일반적 + 가독성
 extension ViewController: UITextFieldDelegate {
     // MARK: - 텍스트필드 편집 시작할때의 설정 - 문구가 위로올라가면서 크기 작아지고, 오토레이아웃 업데이트
     func textFieldDidBeginEditing(_ textField: UITextField) {
