@@ -254,7 +254,7 @@ final class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // 앱의 화면을 터치하면 동작하는 함수
+    // 앱의 화면을 터치하면 동작하는 함수 🍑 화면 터치 시 키보드가 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
