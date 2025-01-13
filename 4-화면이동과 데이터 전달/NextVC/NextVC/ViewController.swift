@@ -50,13 +50,27 @@ class ViewController: UIViewController {
     
     // 🍑 데이터를 전달받으려면 어떤 메서드를 재정의해서 구현해줘야함 (위에처럼 일반적인 someString 불가)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toThirdVC"{
             let thirdVC = segue.destination as! ThirdViewController
             // 데이터 전달
             thirdVC.someString = "세번째 화면입니다."
+            }
+        
+        if segue.identifier == "toFourthVC"{
+            let fourthVC = segue.destination as! FourthViewController
+            // 데이터 전달
+            fourthVC.someString = "네번째 화면입니다."
         }
     }
 
-    
+    // 🍑 어떤 조건에 따라서 세그웨이를 실행할지 안할지 / 버튼에서 직접 세그웨이 연결했을 때
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if true{
+            return true
+        }else {
+            return false
+        }
+    }
 }
 
