@@ -83,6 +83,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5LN-cB-MLX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -96,6 +99,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="6Mb-lb-ort" secondAttribute="trailing" constant="20" id="dhK-UD-zWR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightTextField" destination="aD5-rY-rFN" id="eiR-o7-TO5"/>
+                        <outlet property="mainLable" destination="ML6-oK-Ezq" id="tq1-NL-k8Y"/>
+                        <outlet property="weightTExtField" destination="Zre-so-dsN" id="jBv-hC-jOt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
