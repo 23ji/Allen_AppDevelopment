@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  BMI
+//  BMI-23G
 //
-//  Created by 이상지 on 1/15/25.
+//  Created by 이상지 on 1/29/25.
 //
 
 import UIKit
