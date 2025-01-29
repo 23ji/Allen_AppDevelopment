@@ -35,8 +35,6 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E7D-eA-BaC">
                                 <rect key="frame" x="30" y="174" width="354" height="145"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnD-nY-Vbg">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="D1Q-GV-qbS"/>
                                         </constraints>
@@ -99,10 +97,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calculateButton" destination="SuY-7b-8ZC" id="Fbx-Jj-pjQ"/>
-                        <outlet property="heightTextField" destination="0zZ-Kw-Lbb" id="Mqz-6l-qw4"/>
-                        <outlet property="mainLabel" destination="SnD-nY-Vbg" id="R6o-wQ-5yl"/>
-                        <outlet property="weightTextField" destination="6eR-Bn-8fn" id="mrs-jA-0Tf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -112,9 +106,6 @@
         <!--Second View Controller-->
         <scene sceneID="D9U-RU-6rZ">
             <objects>
-                <viewController id="GJE-69-WvI" customClass="SecondViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="txw-AX-ncb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpp-mV-Aae">
@@ -171,11 +162,6 @@
                             <constraint firstItem="6hg-Y0-fvO" firstAttribute="top" secondItem="U6O-dp-L5a" secondAttribute="top" constant="130" id="z3c-Qx-TWf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WD3-Xq-clq"/>
-                    <connections>
-                        <outlet property="adviceLabel" destination="kdF-Ik-TfB" id="TXb-uP-tg5"/>
-                        <outlet property="backButton" destination="qpp-mV-Aae" id="OBx-FS-aDK"/>
-                        <outlet property="bmiNumberLabel" destination="SSa-uV-62h" id="9C0-7B-sai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8e-GW-QDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -184,11 +170,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
