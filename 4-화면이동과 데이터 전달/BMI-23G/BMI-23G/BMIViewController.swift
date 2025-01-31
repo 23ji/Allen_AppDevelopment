@@ -9,21 +9,19 @@ import UIKit
 
 class BMIViewController: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var BMILabel: UILabel!
+    @IBOutlet weak var descriptionLaabel: UILabel!
+    
+    var BMINumber: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        BMILabel.text = BMINumber
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
-    */
-
+    
 }

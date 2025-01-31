@@ -85,6 +85,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="BMI 계산하기"/>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HWc-Lp-TkH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,6 +101,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jj1-d1-FB7" secondAttribute="trailing" constant="20" id="ocL-cs-5bD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="jj1-d1-FB7" id="gLk-3F-qWs"/>
+                        <outlet property="heightLabel" destination="pqt-wv-9b5" id="kVV-oW-rnh"/>
+                        <outlet property="weightLabel" destination="wbt-JP-N4X" id="fmc-2I-ZgT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +114,7 @@
         <!--View Controller-->
         <scene sceneID="Ib5-pn-CAM">
             <objects>
-                <viewController id="Mx3-Y3-n1H" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BMIVC" id="Mx3-Y3-n1H" customClass="BMIViewController" customModule="BMI_23G" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0gR-IG-Vi5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +159,9 @@
                                 <state key="normal" title="다시 계산하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Mx3-Y3-n1H" eventType="touchUpInside" id="okn-hn-xqo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="91D-UV-pCM"/>
@@ -163,6 +174,11 @@
                             <constraint firstItem="kR5-0p-ETK" firstAttribute="leading" secondItem="91D-UV-pCM" secondAttribute="leading" constant="20" id="oER-dV-Mi8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="BMILabel" destination="NCH-EC-eAJ" id="ODI-86-Lt0"/>
+                        <outlet property="backButton" destination="kR5-0p-ETK" id="PGX-6x-N88"/>
+                        <outlet property="descriptionLaabel" destination="4k6-gI-Fjo" id="CXh-Wh-Wlr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsZ-fC-sa8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +190,7 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
