@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         let height = heightCm / 100 // cm → m 변환
         let BMI = weight / (height * height) // BMI 계산
-        
+                
         viewController.BMINumber = String(format: "%.2f", BMI) // 소수점 2자리까지 표시
     }
 
