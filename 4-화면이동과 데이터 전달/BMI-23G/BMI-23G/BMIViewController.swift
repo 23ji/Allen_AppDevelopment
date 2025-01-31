@@ -17,8 +17,42 @@ class BMIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        
         BMILabel.text = BMINumber
+        
     }
+    
+    func setup() {
+        BMILabel.layer.cornerRadius = 10
+        BMILabel.clipsToBounds = true
+
+        // 🔹 BMINumber를 Double로 변환
+        if let bmi = Double(BMINumber ?? "") {
+            switch bmi {
+            case ..<18.5:
+                BMILabel.backgroundColor = .black
+                descriptionLaabel.text = "저체중"
+            case 18.5..<23.0:
+                BMILabel.backgroundColor = .blue
+                descriptionLaabel.text = "표준"
+            case 23.0..<25.0:
+                BMILabel.backgroundColor = .yellow
+                descriptionLaabel.text = "과체중"
+            case 25.0..<30.0:
+                BMILabel.backgroundColor = .orange
+                descriptionLaabel.text = "중도비만"
+            case 30.0...:
+                BMILabel.backgroundColor = .red
+                descriptionLaabel.text = "고도비만"
+            default:
+                BMILabel.backgroundColor = .gray
+            }
+        } else {
+            BMILabel.backgroundColor = .gray // 숫자로 변환 실패 시 기본값 설정
+        }
+    }
+
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
