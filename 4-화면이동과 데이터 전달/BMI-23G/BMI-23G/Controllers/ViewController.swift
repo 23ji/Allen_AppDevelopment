@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightLabel: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
+    //소통을 위해 인스턴스 생성 후 변수에 넣어둠!
+    var bmiManager = BMICalculratorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,26 +26,11 @@ class ViewController: UIViewController {
         
         guard let BMIVC = storyboard?.instantiateViewController(withIdentifier: "BMIVC") as? BMIViewController else { return }
         
-        calculateBMI(for: BMIVC)
+        bmiManager.calculateBMI(for: BMIVC)
+        //calculateBMI(for: BMIVC)
         
         self.present(BMIVC, animated: true, completion: nil)
         
-    }
-    
-    func calculateBMI(for viewController: BMIViewController) {
-        guard let heightText = heightLabel.text, let weightText = weightLabel.text,
-              let heightCm = Double(heightText), let weight = Double(weightText), heightCm > 0 else {
-            viewController.BMINumber = "입력 오류"
-            return
-        }
-        
-        let height = heightCm / 100 // cm → m 변환
-        let BMI = weight / (height * height) // BMI 계산
-                
-        viewController.BMINumber = String(format: "%.2f", BMI) // 소수점 2자리까지 표시
-    }
-
-
-    
+    }    
 }
 
