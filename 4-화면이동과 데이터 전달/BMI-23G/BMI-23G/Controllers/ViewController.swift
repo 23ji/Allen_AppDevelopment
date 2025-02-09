@@ -19,16 +19,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
     }
 
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         
         guard let BMIVC = storyboard?.instantiateViewController(withIdentifier: "BMIVC") as? BMIViewController else { return }
+
+        let bmiResult = bmiManager.calculateBMI(heightText: heightLabel.text, weightText: weightLabel.text)
         
-        bmiManager.calculateBMI(heightText: heightLabel.text, weightText: weightLabel.text)
-        //calculateBMI(for: BMIVC)
+        //값 전달
+        BMIVC.BMINumber = bmiResult
         
         self.present(BMIVC, animated: true, completion: nil)
         
