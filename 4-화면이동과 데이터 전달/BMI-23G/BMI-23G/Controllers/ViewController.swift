@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var calculateButton: UIButton!
     
     //소통을 위해 인스턴스 생성 후 변수에 넣어둠!
-    var bmiManager = BMICalculratorManager()
+    var bmiManager = BMICalculatorManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
         
         guard let BMIVC = storyboard?.instantiateViewController(withIdentifier: "BMIVC") as? BMIViewController else { return }
         
-        bmiManager.calculateBMI(for: BMIVC)
+        bmiManager.calculateBMI(heightText: heightLabel.text, weightText: weightLabel.text)
         //calculateBMI(for: BMIVC)
         
         self.present(BMIVC, animated: true, completion: nil)
