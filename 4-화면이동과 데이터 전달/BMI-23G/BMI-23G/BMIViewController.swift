@@ -23,6 +23,12 @@ class BMIViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true) // 키보드 닫기
+    }
+
+    
     func setup() {
         BMILabel.layer.cornerRadius = 10
         BMILabel.clipsToBounds = true
