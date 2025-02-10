@@ -17,9 +17,9 @@ class BMIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         
         BMILabel.text = BMINumber
+        setup()
         
     }
     

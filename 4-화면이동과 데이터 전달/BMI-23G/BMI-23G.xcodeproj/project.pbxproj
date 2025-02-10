@@ -14,6 +14,7 @@
 		49A5601F2D4A511D00D99FB3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 49A5601E2D4A511D00D99FB3 /* Base */; };
 		49A560212D4A511D00D99FB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A560202D4A511D00D99FB3 /* Assets.xcassets */; };
 		49A560242D4A511D00D99FB3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 49A560232D4A511D00D99FB3 /* Base */; };
+		A774711C2D564C87006F2F0D /* BMICalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774711B2D564C87006F2F0D /* BMICalculatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		49A560202D4A511D00D99FB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A560232D4A511D00D99FB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49A560252D4A511D00D99FB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A774711B2D564C87006F2F0D /* BMICalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +62,39 @@
 			children = (
 				49A560172D4A511D00D99FB3 /* AppDelegate.swift */,
 				49A560192D4A511D00D99FB3 /* SceneDelegate.swift */,
-				49A5601B2D4A511D00D99FB3 /* ViewController.swift */,
-				49A5601D2D4A511D00D99FB3 /* Main.storyboard */,
+				A77471182D564239006F2F0D /* Models */,
+				A77471192D564245006F2F0D /* Views */,
+				A774711A2D56424C006F2F0D /* Controllers */,
 				49A560202D4A511D00D99FB3 /* Assets.xcassets */,
 				49A560222D4A511D00D99FB3 /* LaunchScreen.storyboard */,
 				49A560252D4A511D00D99FB3 /* Info.plist */,
-				495000E52D4C84960057ECEC /* BMIViewController.swift */,
 			);
 			path = "BMI-23G";
+			sourceTree = "<group>";
+		};
+		A77471182D564239006F2F0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A774711B2D564C87006F2F0D /* BMICalculatorManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A77471192D564245006F2F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49A5601D2D4A511D00D99FB3 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A774711A2D56424C006F2F0D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49A5601B2D4A511D00D99FB3 /* ViewController.swift */,
+				495000E52D4C84960057ECEC /* BMIViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +171,7 @@
 				49A5601C2D4A511D00D99FB3 /* ViewController.swift in Sources */,
 				495000E62D4C84960057ECEC /* BMIViewController.swift in Sources */,
 				49A560182D4A511D00D99FB3 /* AppDelegate.swift in Sources */,
+				A774711C2D564C87006F2F0D /* BMICalculatorManager.swift in Sources */,
 				49A5601A2D4A511D00D99FB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
