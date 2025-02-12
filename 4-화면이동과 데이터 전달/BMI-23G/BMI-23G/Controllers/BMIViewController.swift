@@ -18,6 +18,7 @@ class BMIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //🟡 전달된 값을 BMILael에 담아서 표시함
         BMILabel.text = BMINumber
         setup()
         
@@ -26,8 +27,9 @@ class BMIViewController: UIViewController {
     func setup() {
         BMILabel.layer.cornerRadius = 10
         BMILabel.clipsToBounds = true
-
-        // 🔹 BMINumber를 Double로 변환
+        
+        //🟡 BMI 결과값에 따라 표시 구현
+        //🔹 BMINumber를 Double로 변환
         if let bmi = Double(BMINumber ?? "") {
             switch bmi {
             case ..<18.5:
