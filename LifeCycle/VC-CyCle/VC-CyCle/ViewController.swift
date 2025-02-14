@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 
     // 뷰가 나타나기 전
     override func viewWillAppear(_ animated: Bool) {
+        // 위의 파라미터에서 받은 것을 전달해주면 됨
         super.viewWillAppear(animated)
         print("VC-1 viewWillAppear 호출됨")
     }
