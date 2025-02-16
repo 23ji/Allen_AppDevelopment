@@ -66,7 +66,7 @@ final class ViewController: UIViewController {
             btnHeightAnchor.constant = 60
             btnWidthAnchor.constant = 100
         }
-        
+        // 클로저로 구현
         UIView.animate(withDuration: 2) {
             self.view.layoutIfNeeded()
         } completion: { success in

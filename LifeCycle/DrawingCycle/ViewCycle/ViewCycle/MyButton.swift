@@ -20,10 +20,12 @@ final class MyButton: UIButton {
     }
     */
     
+    //토글이란 함수를 만들어서 구현
     func toggle() {
         self.onAndOff.toggle()
     }
     
+    //layoutSubviews에
     override func layoutSubviews() {
         super.layoutSubviews()
         print(#function)
