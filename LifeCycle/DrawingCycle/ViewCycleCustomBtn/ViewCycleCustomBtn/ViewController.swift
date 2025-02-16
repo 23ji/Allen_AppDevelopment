@@ -61,6 +61,7 @@ final class ViewController: UIViewController {
             myViewWidthAnchor.constant = 150
         }
         
+        //클로저로 구현, layoutIfNeeded에
         UIView.animate(withDuration: 2) {
             self.view.layoutIfNeeded()
         } completion: { success in
