@@ -26,9 +26,10 @@ final class ViewController: UIViewController {
     }
     
     // 뷰컨트롤러에서 프레임이 결정이 되는 곳 ⭐️
-    // 그래서, 버튼을 넓이 기준으로 깍는 것이 가능(넓이 프레임이 결정되니까)
+    // 그래서, 버튼을 넓이 기준으로 깎는 것이 가능(넓이 프레임이 결정되니까)
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        // Radius를 너비의 절반으로 지정하여 완전한 원이 되게
         self.myButton.layer.cornerRadius = self.myButton.frame.width / 2
     }
     
