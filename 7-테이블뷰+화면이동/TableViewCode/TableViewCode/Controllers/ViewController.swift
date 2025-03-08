@@ -85,6 +85,7 @@ extension ViewController: UITableViewDataSource {
         
         // (힙에 올라간)재사용 가능한 셀을 꺼내서 사용하는 메서드 (애플이 미리 잘 만들어 놓음)
         // (사전에 셀을 등록하는 과정이 내부 메커니즘에 존재)
+        //공식!
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MyTableViewCell
         
         cell.mainImageView.image = moviesArray[indexPath.row].movieImage

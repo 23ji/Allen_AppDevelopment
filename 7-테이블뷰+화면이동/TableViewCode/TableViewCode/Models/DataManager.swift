@@ -9,8 +9,10 @@ import UIKit
 
 
 class DataManager {
+    //생성자 대신 빈 배열 생성 
     private var moviewDataArray: [Movie] = []
     
+    //배열을 만드는 함수 생성
     func makeMovieData() {
         moviewDataArray = [
             Movie(movieImage: UIImage(named: "batman.png"), movieName: "배트맨", movieDescription: "배트맨이 출현하는 영화"),
