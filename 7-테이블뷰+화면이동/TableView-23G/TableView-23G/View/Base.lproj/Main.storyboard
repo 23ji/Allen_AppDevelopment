@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="120" id="y9T-fF-XNa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="120" id="y9T-fF-XNa" customClass="MovieCell" customModule="TableView_23G" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y9T-fF-XNa" id="p4w-yJ-akK">
@@ -68,6 +68,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="xMT-6k-Fp1" secondAttribute="bottom" constant="15" id="z7j-xl-Veq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="hJt-UF-pPl" id="iVq-gE-b1U"/>
+                                            <outlet property="movieImage" destination="xMT-6k-Fp1" id="Zd6-b9-7da"/>
+                                            <outlet property="movieName" destination="PPY-bI-eiw" id="Qg8-4E-pYd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -82,7 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="YWz-Ul-kGm" id="SZ3-6D-FAa"/>
+                        <outlet property="tableView" destination="YWz-Ul-kGm" id="fxV-Wx-h48"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

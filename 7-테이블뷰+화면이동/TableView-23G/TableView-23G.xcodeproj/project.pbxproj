@@ -14,6 +14,8 @@
 		A790A86C2D7D944E0089DADA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A790A86B2D7D944E0089DADA /* Base */; };
 		A7B37C6B2DB3973B00FC164C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B37C6A2DB3973B00FC164C /* ViewController.swift */; };
 		A7B37C6D2DB3982A00FC164C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B37C6C2DB3982A00FC164C /* Movie.swift */; };
+		A7B37C6F2DB39A6800FC164C /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B37C6E2DB39A6800FC164C /* MovieManager.swift */; };
+		A7B37C712DB39C9A00FC164C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B37C702DB39C9A00FC164C /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A790A86D2D7D944E0089DADA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B37C6A2DB3973B00FC164C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7B37C6C2DB3982A00FC164C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A7B37C6E2DB39A6800FC164C /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		A7B37C702DB39C9A00FC164C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A790A8652D7D944C0089DADA /* Main.storyboard */,
+				A7B37C702DB39C9A00FC164C /* MovieCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A7B37C6C2DB3982A00FC164C /* Movie.swift */,
+				A7B37C6E2DB39A6800FC164C /* MovieManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 			files = (
 				A7B37C6B2DB3973B00FC164C /* ViewController.swift in Sources */,
 				A790A8602D7D944C0089DADA /* AppDelegate.swift in Sources */,
+				A7B37C712DB39C9A00FC164C /* MovieCell.swift in Sources */,
+				A7B37C6F2DB39A6800FC164C /* MovieManager.swift in Sources */,
 				A7B37C6D2DB3982A00FC164C /* Movie.swift in Sources */,
 				A790A8622D7D944C0089DADA /* SceneDelegate.swift in Sources */,
 			);

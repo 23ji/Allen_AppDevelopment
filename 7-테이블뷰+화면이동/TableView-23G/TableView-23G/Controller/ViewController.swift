@@ -9,12 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  
   @IBOutlet weak var tableView: UITableView!
   
+  var movie = MovieManager()
+  
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
+    self.tableView.dataSource = self
+  }
+  
+}
 
-        // Do any additional setup after loading the view.
-    }
-
+extension ViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
+    
+    cell.movieImage.image = movie.movieArr[indexPath.row].movieImage
+    cell.movieName.text = movie.movieArr[indexPath.row].movieName
+    cell.descriptionLabel.text = movie.movieArr[indexPath.row].descriptionLabel
+    
+    return cell
+  }
+  
+  
 }
