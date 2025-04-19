@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     self.tableView.delegate = self
   }
   
+  @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+    movie.updateMovie()
+    tableView.reloadData()
+  }
 }
 
 extension ViewController: UITableViewDataSource {

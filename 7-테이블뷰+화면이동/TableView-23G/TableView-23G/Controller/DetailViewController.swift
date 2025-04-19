@@ -23,6 +23,5 @@ class DetailViewController: UIViewController {
     movieImage.image = movieData?.movieImage
     movieName.text = movieData?.movieName
     descriptionLabel.text = movieData?.descriptionLabel
-    print(movieName.text)
   }
 }
