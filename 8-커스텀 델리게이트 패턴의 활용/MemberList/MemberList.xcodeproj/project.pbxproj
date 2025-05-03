@@ -15,6 +15,7 @@
 		A73906E12DC6235100C35775 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A73906E02DC6235100C35775 /* Base */; };
 		A73906EC2DC6280A00C35775 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73906EB2DC6280A00C35775 /* Member.swift */; };
 		A73906EE2DC62B8B00C35775 /* MemberListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73906ED2DC62B8B00C35775 /* MemberListManager.swift */; };
+		A73906F02DC6333800C35775 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73906EF2DC6333800C35775 /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A73906E22DC6235100C35775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73906EB2DC6280A00C35775 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		A73906ED2DC62B8B00C35775 /* MemberListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListManager.swift; sourceTree = "<group>"; };
+		A73906EF2DC6333800C35775 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		A73906EA2DC627D100C35775 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A73906EF2DC6333800C35775 /* MyTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				A73906D52DC6235000C35775 /* AppDelegate.swift in Sources */,
 				A73906D72DC6235000C35775 /* SceneDelegate.swift in Sources */,
 				A73906EC2DC6280A00C35775 /* Member.swift in Sources */,
+				A73906F02DC6333800C35775 /* MyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

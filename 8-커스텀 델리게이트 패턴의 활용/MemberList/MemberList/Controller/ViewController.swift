@@ -16,10 +16,22 @@ final class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    memberListManager.makeMembersListData()
-    tableView.dataSource = self
+    view.backgroundColor = .white
+    setupDatas()
+    setupTableView()
     setupNaviBar()
     setupTableViewConstraints()
+  }
+  
+  
+  func setupDatas() {
+    memberListManager.makeMembersListData()
+  }
+  
+  
+  func setupTableView() {
+    tableView.dataSource = self
+    tableView.rowHeight = 60
   }
   
   
