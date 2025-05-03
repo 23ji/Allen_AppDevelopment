@@ -11,9 +11,12 @@ final class ViewController: UIViewController {
   
   private let tableView = UITableView()
   
+  var memberListManager = MemberListManager()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    memberListManager.makeMembersListData()
     tableView.dataSource = self
     setupNaviBar()
     setupTableViewConstraints()
@@ -29,6 +32,9 @@ final class ViewController: UIViewController {
     navigationController?.navigationBar.standardAppearance = appearance
     navigationController?.navigationBar.compactAppearance = appearance
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    
+    // 내비게이션 바 상단 설정
+    //self.navigationItem.rightBarButtonItem = self.plusButton
   }
   
   
@@ -50,7 +56,7 @@ final class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    5
+    memberListManager.getMembersList().count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

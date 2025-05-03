@@ -7,6 +7,8 @@
 
 import UIKit
 
+// 데이터에 관한 모델
+
 struct Member {
   lazy var memberImage: UIImage? = {
     guard let name = name else {
