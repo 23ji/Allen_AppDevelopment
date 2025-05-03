@@ -11,11 +11,26 @@ final class ViewController: UIViewController {
   
   private let tableView = UITableView()
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
+    setupNaviBar()
     setupTableViewConstraints()
   }
+  
+  
+  func setupNaviBar() {
+    title = "회원 목록"
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground() // 불투명
+    appearance.backgroundColor = .white
+    navigationController?.navigationBar.tintColor = .systemBlue
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+  }
+  
   
   func setupTableViewConstraints() {
     view.addSubview(tableView)
