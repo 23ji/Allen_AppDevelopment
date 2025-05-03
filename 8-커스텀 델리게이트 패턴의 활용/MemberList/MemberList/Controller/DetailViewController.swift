@@ -8,9 +8,26 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+  
+  private let detailView = DetailView()
+  
+  var member: Member?
+  
+  
+  override func loadView() {
+    view = detailView
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupButtonAction()
+  }
+  
+  func setupButtonAction() {
+    detailView.saveButton.addTarget(self, action: #selector(saveButtonTappped), for: .touchUpInside)
+  }
+  
+  @objc func saveButtonTappped() {
+    print("버튼 눌림")
+  }
 }
