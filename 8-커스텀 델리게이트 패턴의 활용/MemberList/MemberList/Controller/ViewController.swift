@@ -76,10 +76,16 @@ extension ViewController: UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as! MyTableViewCell
     
-    cell.mainImageView.image = memberListManager[indexPath.row].memberImage
-    cell.memberNameLabel.text = memberListManager[indexPath.row].name
-    cell.addressLabel.text = memberListManager[indexPath.row].address
+    //MARK: 방법 1
+    
+    cell.member = memberListManager[indexPath.row]
     cell.selectionStyle = .none
+    
+    //MARK: 방법 2
+    //    cell.mainImageView.image = memberListManager[indexPath.row].memberImage
+    //    cell.memberNameLabel.text = memberListManager[indexPath.row].name
+    //    cell.addressLabel.text = memberListManager[indexPath.row].address
+    //    cell.selectionStyle = .none
     
     return cell
   }
