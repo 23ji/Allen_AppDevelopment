@@ -25,7 +25,7 @@ struct Member {
   var address: String?
   
   init(name: String, age: Int, number: String, address: String) {
-    self.memberId = Member.memberNumbers == 0 ? 0 : Member.memberNumbers
+    self.memberId = Member.memberNumbers
     
     self.name = name
     self.age = age
