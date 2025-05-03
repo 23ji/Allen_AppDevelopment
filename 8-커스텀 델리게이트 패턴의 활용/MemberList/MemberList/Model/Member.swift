@@ -5,9 +5,17 @@
 //  Created by 이상지 on 5/3/25.
 //
 
-import Foundation
+import UIKit
 
 struct Member {
+  lazy var memberImage: UIImage? = {
+    guard let name = name else {
+      return UIImage(systemName: "person")
+    }
+    return UIImage(named: "\(name).png") ?? UIImage(systemName: "person")
+  }()
+  
+  
   static var memberNumbers: Int = 0
   
   let memberId: Int
