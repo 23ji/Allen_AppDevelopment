@@ -95,6 +95,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let detailVC = DetailViewController()
+    
+    let array = memberListManager.getMembersList()
+    detailVC.member = array[indexPath.row]
     navigationController?.pushViewController(detailVC, animated: true)
   }
 }

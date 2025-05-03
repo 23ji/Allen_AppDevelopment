@@ -18,10 +18,18 @@ class DetailViewController: UIViewController {
     view = detailView
   }
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupDatas()
     setupButtonAction()
   }
+  
+  
+  func setupDatas() {
+    detailView.member = member
+  }
+  
   
   func setupButtonAction() {
     detailView.saveButton.addTarget(self, action: #selector(saveButtonTappped), for: .touchUpInside)
