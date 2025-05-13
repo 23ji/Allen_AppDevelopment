@@ -13,11 +13,10 @@ final class ViewController: UIViewController {
   
   var memberListManager = MemberListManager()
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    self.tableView.reloadData()
-  }
+  lazy var plusButton: UIBarButtonItem = {
+    let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+    return button
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +25,12 @@ final class ViewController: UIViewController {
     setupTableView()
     setupNaviBar()
     setupTableViewConstraints()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.tableView.reloadData()
   }
   
   
@@ -53,7 +58,7 @@ final class ViewController: UIViewController {
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
     
     // 내비게이션 바 상단 설정
-    //self.navigationItem.rightBarButtonItem = self.plusButton
+    self.navigationItem.rightBarButtonItem = self.plusButton
   }
   
   
@@ -70,6 +75,11 @@ final class ViewController: UIViewController {
     )
   }
   
+  
+  @objc func plusButtonTapped() {
+    let detailVC = DetailViewController()
+    navigationController?.pushViewController(detailVC, animated: true)
+  }
   
 }
 
