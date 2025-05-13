@@ -35,7 +35,7 @@ final class MemberListManager {
   
   
   // 기존 멤버 정보 업데이트
-  func updateMemnerInfo(index: Int, _ member: Member){
+  func updateMemberInfo(index: Int, _ member: Member){
     memberList[index] = member
   }
   
