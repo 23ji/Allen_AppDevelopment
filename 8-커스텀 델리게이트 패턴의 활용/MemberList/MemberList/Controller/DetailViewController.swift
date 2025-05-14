@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PhotosUI
+
 
 class DetailViewController: UIViewController {
   
@@ -35,6 +37,18 @@ class DetailViewController: UIViewController {
     detailView.saveButton.addTarget(self, action: #selector(saveButtonTappped), for: .touchUpInside)
   }
   
+  func setUpImagePicker() {
+    
+    var configration = PHPickerConfiguration()
+    configration.selectionLimit = 0
+    configration.filter = .any(of: [.images, .videos])
+    
+    let picker = PHPickerViewController(configuration: configration)
+    
+    picker.delegate = self
+    self.present(picker, animated: true, completion: nil)
+  }
+  
   @objc func saveButtonTappped() {
     if member == nil {
       
@@ -62,3 +76,22 @@ class DetailViewController: UIViewController {
     print("버튼 눌림")
   }
 }
+
+
+extension DetailViewController: PHPickerViewControllerDelegate {
+  // 아래 구현은 거의 템플릿임! 외우기보다는 그떄그때 구글링해서 쓰면 됨
+  func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+    picker.dismiss(animated: true)
+    
+    let itemProvider = results.first?.itemProvider
+    
+    if let itemProvider = itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+      itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+        DispatchQueue.main.async {
+          self.detailView.mainImageView.image = image as? UIImage
+        }
+      }
+    }
+  }
+}
+  
