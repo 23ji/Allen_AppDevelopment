@@ -240,6 +240,12 @@ final class DetailView: UIView {
     self.addSubview(stackView)
   }
   
+  func setupNotification() {
+    NotificationCenter.default.addObserver(self, selector: #selector(moveUPAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(moveDownAction), name: UIResponder.keyboardDidHideNotification, object: nil)
+  }
+  
   func setupMemberIdTextField() {
     memberIdTextField.delegate = self
   }
@@ -283,8 +289,34 @@ final class DetailView: UIView {
       stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
     ])
   }
+  
+  @objc func moveUPAction() {
+    stackViewTopConstraint.constant = -20
+    UIView.animate(withDuration: 0.2) {
+      self.layoutIfNeeded()
+    }
+  }
+  
+  @objc func moveDownAction() {
+    stackViewTopConstraint.constant = 10
+    UIView.animate(withDuration: 0.2) {
+      self.layoutIfNeeded()
+    }
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.endEditing(true)
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
+  }
 }
 
+
+//MARK: - 델리게이트
 // 멤버 ID 수정하지 못하게
 extension DetailView: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharacters range: NSRange, replacementString string: String) -> Bool {
