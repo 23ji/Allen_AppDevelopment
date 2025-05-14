@@ -229,7 +229,7 @@ final class DetailView: UIView {
     backgroundColor = .white
     setupStackView()
     //setupNotification()
-    //setupMemberIdTextField()
+    setupMemberIdTextField()
   }
   
   required init?(coder: NSCoder) {
@@ -238,6 +238,10 @@ final class DetailView: UIView {
   
   func setupStackView() {
     self.addSubview(stackView)
+  }
+  
+  func setupMemberIdTextField() {
+    memberIdTextField.delegate = self
   }
   
   
@@ -281,3 +285,13 @@ final class DetailView: UIView {
   }
 }
 
+// 멤버 ID 수정하지 못하게
+extension DetailView: UITextFieldDelegate {
+  func textField(_ textField: UITextField, shouldChangeCharacters range: NSRange, replacementString string: String) -> Bool {
+    
+    if textField == memberIdTextField {
+      return false
+    }
+    return true
+  }
+}
