@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
     super.viewDidLoad()
     setupDatas()
     setupButtonAction()
+    setUpGestures()
   }
   
   
@@ -36,6 +37,19 @@ class DetailViewController: UIViewController {
   func setupButtonAction() {
     detailView.saveButton.addTarget(self, action: #selector(saveButtonTappped), for: .touchUpInside)
   }
+  
+  
+  func setUpGestures() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchUpImageView))
+    detailView.mainImageView.addGestureRecognizer(tapGesture)
+    detailView.mainImageView.isUserInteractionEnabled = true
+  }
+  
+  @objc func touchUpImageView() {
+    print("image touch")
+    setUpImagePicker()
+  }
+  
   
   func setUpImagePicker() {
     
