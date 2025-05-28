@@ -66,6 +66,18 @@ class DetailViewController: UIViewController {
   @objc func saveButtonTappped() {
     if member == nil {
       
+      let name = detailView.nameTextField.text ?? ""
+      let address = detailView.addressTextField.text ?? ""
+      let phone = detailView.phoneNumberTextField.text ?? ""
+      let age = Int(detailView.ageTextField.text!) ?? 0
+      
+      var newMember = Member(name: name, age: age, number: phone, address: address)
+      newMember.memberImage = detailView.mainImageView.image
+      
+      let index = navigationController!.viewControllers.count - 2
+      let vc = navigationController?.viewControllers[index] as! ViewController
+      
+      vc.memberListManager.makeNewMember(newMember)
     } else {
       member?.memberImage = detailView.mainImageView.image
       
@@ -75,7 +87,7 @@ class DetailViewController: UIViewController {
       member!.phone = detailView.phoneNumberTextField.text ?? ""
       member!.age = Int(detailView.ageTextField.text!) ?? 0
       
-      // 방법 1
+      // 방법 1 : 델리게이트 방식이 아님
       // 0 을 만들기 위해
       let index = navigationController!.viewControllers.count - 2
       
@@ -83,7 +95,7 @@ class DetailViewController: UIViewController {
       
       vc.memberListManager.updateMemberInfo(index: memberId, member!)
       
-      // 방법 2
+      // 방법 2 : 커스텀 델리게이트 활용
       
     }
     self.navigationController?.popViewController(animated: true)

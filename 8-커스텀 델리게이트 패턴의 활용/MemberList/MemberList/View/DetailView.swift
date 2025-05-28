@@ -228,7 +228,7 @@ final class DetailView: UIView {
     super.init(frame: frame)
     backgroundColor = .white
     setupStackView()
-    //setupNotification()
+    setupNotification()
     setupMemberIdTextField()
   }
   
