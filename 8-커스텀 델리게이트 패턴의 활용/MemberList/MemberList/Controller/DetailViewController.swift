@@ -13,7 +13,8 @@ class DetailViewController: UIViewController {
   
   private let detailView = DetailView()
   
-  var delegate: MemberDelegate?
+  //강한 참조 방지
+  weak var delegate: MemberDelegate?
   
   var member: Member?
   

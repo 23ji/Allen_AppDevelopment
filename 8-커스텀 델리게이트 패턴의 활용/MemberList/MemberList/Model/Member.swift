@@ -7,7 +7,8 @@
 
 import UIKit
 
-protocol MemberDelegate {
+// 클래스만 참조할 수 있도록
+protocol MemberDelegate: AnyObject {
   func addNewMember(_ member: Member)
   func update(index: Int, _ member: Member)
 }

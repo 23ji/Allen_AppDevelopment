@@ -27,11 +27,12 @@ final class ViewController: UIViewController {
     setupTableViewConstraints()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    
-    self.tableView.reloadData()
-  }
+  //델리게이트 패턴 활용하면 아래 코드 필요없음!
+//  override func viewWillAppear(_ animated: Bool) {
+//    super.viewWillAppear(animated)
+//    
+//    self.tableView.reloadData()
+//  }
   
   
   func setupDatas() {
