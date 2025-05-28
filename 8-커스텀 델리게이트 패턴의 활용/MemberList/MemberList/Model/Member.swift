@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol MemberDelegate {
+  func addNewMember(_ member: Member)
+  func update(index: Int, _ member: Member)
+}
+
 // 데이터에 관한 모델
 
 struct Member {

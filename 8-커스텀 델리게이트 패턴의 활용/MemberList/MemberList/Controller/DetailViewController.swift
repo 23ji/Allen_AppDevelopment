@@ -13,8 +13,9 @@ class DetailViewController: UIViewController {
   
   private let detailView = DetailView()
   
-  var member: Member?
+  var delegate: MemberDelegate?
   
+  var member: Member?
   
   override func loadView() {
     view = detailView
@@ -74,10 +75,14 @@ class DetailViewController: UIViewController {
       var newMember = Member(name: name, age: age, number: phone, address: address)
       newMember.memberImage = detailView.mainImageView.image
       
-      let index = navigationController!.viewControllers.count - 2
-      let vc = navigationController?.viewControllers[index] as! ViewController
+      // 방법 1 : 델리게이트 방식이 아님
+      //let index = navigationController!.viewControllers.count - 2
+      //let vc = navigationController?.viewControllers[index] as! ViewController
       
-      vc.memberListManager.makeNewMember(newMember)
+      //vc.memberListManager.makeNewMember(newMember)
+      
+      // 방법 2 : 델리게이트 방식
+      delegate?.addNewMember(newMember)
     } else {
       member?.memberImage = detailView.mainImageView.image
       
@@ -89,14 +94,14 @@ class DetailViewController: UIViewController {
       
       // 방법 1 : 델리게이트 방식이 아님
       // 0 을 만들기 위해
-      let index = navigationController!.viewControllers.count - 2
+      //let index = navigationController!.viewControllers.count - 2
       
-      let vc = navigationController?.viewControllers[index] as! ViewController
+      //let vc = navigationController?.viewControllers[index] as! ViewController
       
-      vc.memberListManager.updateMemberInfo(index: memberId, member!)
+      //vc.memberListManager.updateMemberInfo(index: memberId, member!)
       
       // 방법 2 : 커스텀 델리게이트 활용
-      
+      delegate?.update(index: memberId, member!)
     }
     self.navigationController?.popViewController(animated: true)
     print("버튼 눌림")

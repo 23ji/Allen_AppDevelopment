@@ -109,7 +109,10 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+    // 다음화면으로 넘어가는 코드
     let detailVC = DetailViewController()
+    detailVC.delegate = self //여기서 self는 viewController
     
     let array = memberListManager.getMembersList()
     detailVC.member = array[indexPath.row]
@@ -117,3 +120,14 @@ extension ViewController: UITableViewDelegate {
   }
 }
 
+extension ViewController: MemberDelegate {
+  func addNewMember(_ member: Member) {
+    memberListManager.makeNewMember(member)
+    tableView.reloadData()
+  }
+  
+  func update(index: Int, _ member: Member) {
+    memberListManager.updateMemberInfo(index: index, member)
+    tableView.reloadData()
+  }
+}
